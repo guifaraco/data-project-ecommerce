@@ -15,3 +15,4 @@ wheels/
 # Project related
 data/
 postgres_data/
+logs/

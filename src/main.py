@@ -17,7 +17,7 @@ def main():
         create_schema_if_not_exists(engine, schema)
         
         # Extract
-        dfs = extract_data_from_kaggle("olistbr/brazilian-ecommerce", "~/code/projects/ecommerce_datawarehouse/data")
+        dfs = extract_data_from_kaggle("olistbr/brazilian-ecommerce", "~/code/projects/data-project-ecommerce/data")
         
         #Load
         for table_name, df in dfs.items():

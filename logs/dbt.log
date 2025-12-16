@@ -1,29 +1,16 @@
-[0m20:36:23.261306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79de17cc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79de3160d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79de3428d0>]}
+[0m23:12:58.355178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff68a350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff835f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3f00ba7190>]}
 
 
-============================== 20:36:23.287150 | 0e0f1b89-f643-4f4b-a45e-4875a58cdd96 ==============================
-[0m20:36:23.287150 [info ] [MainThread]: Running with dbt=1.10.15
-[0m20:36:23.287604 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'quiet': 'False', 'profiles_dir': '/home/guirfv/.dbt', 'target_path': 'None', 'log_cache_events': 'False', 'use_colors': 'True', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'log_format': 'default', 'static_parser': 'True', 'write_json': 'True', 'empty': 'None', 'introspect': 'True', 'invocation_command': 'dbt init --skip-profile-setup dbt_ecommerce_project', 'warn_error': 'None', 'use_experimental_parser': 'False', 'no_print': 'None'}
-[0m20:36:23.316901 [info ] [MainThread]: Creating dbt configuration folder at /home/guirfv/.dbt
-[0m20:36:23.317969 [debug] [MainThread]: Starter project path: /home/guirfv/code/projects/ecommerce_datawarehouse/.venv/lib/python3.11/site-packages/dbt/include/starter_project
-[0m20:36:23.319435 [info ] [MainThread]: 
-Your new dbt project "dbt_ecommerce_project" was created!
-
-For more information on how to configure the profiles.yml file,
-please consult the dbt documentation here:
-
-  https://docs.getdbt.com/docs/configure-your-profile
-
-One more thing:
-
-Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
-
-  https://community.getdbt.com/
-
-Happy modeling!
-
-[0m20:36:23.320025 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.09624777, "process_in_blocks": "0", "process_kernel_time": 0.082412, "process_mem_max_rss": "120264", "process_out_blocks": "1808", "process_user_time": 0.922489}
-[0m20:36:23.320421 [debug] [MainThread]: Command `dbt init` succeeded at 20:36:23.320341 after 0.10 seconds
-[0m20:36:23.320807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79de3165d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79de316dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79e1f12e10>]}
-[0m20:36:23.321178 [debug] [MainThread]: Flushing usage events
-[0m20:36:24.050936 [debug] [MainThread]: An error was encountered while trying to flush usage events
+============================== 23:12:58.357582 | 6c3252d0-f63e-4d58-8e91-050593d04bc3 ==============================
+[0m23:12:58.357582 [info ] [MainThread]: Running with dbt=1.10.15
+[0m23:12:58.358041 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt docs generate', 'no_print': 'None', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'write_json': 'True', 'printer_width': '80', 'fail_fast': 'False', 'empty': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/home/guirfv/.dbt', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'use_colors': 'True', 'log_path': 'logs', 'debug': 'False', 'static_parser': 'True', 'introspect': 'True', 'warn_error': 'None', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m23:12:58.358459 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/guirfv/code/projects/data-project-ecommerce/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:12:58.358974 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.046712834, "process_in_blocks": "8", "process_kernel_time": 0.082975, "process_mem_max_rss": "101440", "process_out_blocks": "8", "process_user_time": 1.005708}
+[0m23:12:58.359374 [debug] [MainThread]: Command `dbt docs generate` failed at 23:12:58.359297 after 0.05 seconds
+[0m23:12:58.359673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff9ce890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff836bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff837dd0>]}
+[0m23:12:58.359991 [debug] [MainThread]: Flushing usage events
+[0m23:12:59.171891 [debug] [MainThread]: An error was encountered while trying to flush usage events
