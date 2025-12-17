@@ -1,0 +1,59 @@
+version: 2
+
+models:
+    - name: stg_olist__orders
+      description: Cleansed and standardized orders table
+      columns:
+          - name: order_id
+            description: unique identifier of the order.
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_id
+            description: key to the customer dataset. Each order has a unique customer_id.
+            tests:
+                - unique
+                - not_null
+
+          - name: order_status
+            description: Reference to the order status (delivered, shipped, etc).
+
+          - name: order_purchase_timestamp
+            description: Shows the purchase timestamp.
+
+          - name: order_approved_at
+            description: Shows the payment approval timestamp.
+
+          - name: order_delivered_carrier_date
+            description: Shows the order posting timestamp. When it was handled to the logistic partner.
+
+          - name: order_delivered_customer_date
+            description: Shows the actual order delivery date to the customer.
+
+          - name: order_estimated_delivery_date
+            description: Shows the estimated delivery date that was informed to customer at the purchase moment.
+
+    - name: stg_olist__customers
+      description: Cleansed and standardized customers table.
+      columns:
+          - name: customer_id
+            description: key to the orders dataset. Each order has a unique customer_id.
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_unique_id
+            description: unique identifier of a customer.
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_zip_code_prefix
+            description: first five digits of customer zip code.
+
+          - name: customer_city
+            description: customer city name.
+
+          - name: customer_state
+            description: customer state.

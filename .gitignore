@@ -16,3 +16,4 @@ wheels/
 data/
 postgres_data/
 logs/
+service_account.json

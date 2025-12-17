@@ -14,3 +14,35 @@ Runtime Error
 [0m23:12:58.359673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff9ce890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff836bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d3eff837dd0>]}
 [0m23:12:58.359991 [debug] [MainThread]: Flushing usage events
 [0m23:12:59.171891 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:16:31.581812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f46d1f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f1de5510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f1c3e0d0>]}
+
+
+============================== 23:16:31.586730 | 80023e48-b5e1-4a4d-8ac6-2cace969b9bf ==============================
+[0m23:16:31.586730 [info ] [MainThread]: Running with dbt=1.10.15
+[0m23:16:31.587303 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'static_parser': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'printer_width': '80', 'log_format': 'default', 'log_path': 'logs', 'debug': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'version_check': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'profiles_dir': '/home/guirfv/.dbt', 'invocation_command': 'dbt run', 'quiet': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m23:16:31.587930 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/guirfv/code/projects/data-project-ecommerce/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:16:31.588678 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04984417, "process_in_blocks": "8", "process_kernel_time": 0.094905, "process_mem_max_rss": "101816", "process_out_blocks": "16", "process_user_time": 1.001001}
+[0m23:16:31.589255 [debug] [MainThread]: Command `dbt run` failed at 23:16:31.589154 after 0.05 seconds
+[0m23:16:31.589575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f571cc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f6bc2790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3f1a95a10>]}
+[0m23:16:31.589901 [debug] [MainThread]: Flushing usage events
+[0m23:16:32.507191 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:17:04.550690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f2627d290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f262a5750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f262a5410>]}
+
+
+============================== 23:17:04.553326 | 65855bb6-1f96-4db6-8f3e-0f096284e2ee ==============================
+[0m23:17:04.553326 [info ] [MainThread]: Running with dbt=1.10.15
+[0m23:17:04.553837 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'fail_fast': 'False', 'write_json': 'True', 'printer_width': '80', 'profiles_dir': '/home/guirfv/.dbt', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'warn_error': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'static_parser': 'True', 'quiet': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'introspect': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'invocation_command': 'dbt run'}
+[0m23:17:04.554280 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/guirfv/code/projects/data-project-ecommerce/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:17:04.554830 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04527303, "process_in_blocks": "0", "process_kernel_time": 0.091977, "process_mem_max_rss": "101708", "process_out_blocks": "8", "process_user_time": 1.014748}
+[0m23:17:04.555229 [debug] [MainThread]: Command `dbt run` failed at 23:17:04.555127 after 0.05 seconds
+[0m23:17:04.555545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f262b1110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f262b1310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x769f29f7ddd0>]}
+[0m23:17:04.555851 [debug] [MainThread]: Flushing usage events
+[0m23:17:05.384690 [debug] [MainThread]: An error was encountered while trying to flush usage events
