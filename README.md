@@ -77,7 +77,7 @@ To run this project, you need a Service Account with BigQuery Admin permissions:
 Clone the repository and install dependencies using `uv`:
 
 ```bash
-git clone git@github.com:guifaraco/data-project-ecommerce.git olist-data-plataform
+git clone git@github.com:guifaraco/data-project-ecommerce.git olist-data-platform
 cd olist-data-platform
 
 # Install dependencies from pyproject.toml
