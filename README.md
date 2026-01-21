@@ -18,9 +18,9 @@ The solution follows a modern ELT pattern:
 1.  **Extract:** Python scripts fetch raw CSV data from Kaggle/Local Source.
 2.  **Load:** Data is processed in-memory (Pandas) and loaded directly into **Google BigQuery** using the `google-cloud-bigquery` client (Parquet serialization for robustness).
 3.  **Transform:** **dbt (data build tool)** orchestrates the transformation logic through three distinct layers:
-    -   **Staging (Silver):** 1:1 cleaning, type casting, and standardizing naming conventions.
-    -   **Intermediate:** Complex joins, aggregations, and business logic isolation.
-    -   **Marts (Gold):** Final, consumer-ready Fact and Dimension tables (Star Schema).
+    - **Staging (Silver):** 1:1 cleaning, type casting, and standardizing naming conventions.
+    - **Intermediate:** Complex joins, aggregations, and business logic isolation.
+    - **Marts (Gold):** Final, consumer-ready Fact and Dimension tables (Star Schema).
 
 ```mermaid
 flowchart LR
@@ -34,27 +34,27 @@ flowchart LR
 
 ## 🛠️ Tech Stack
 
--   **Language:** Python 3.11+
+- **Language:** Python 3.11+
 
--   **Dependency Manager:** `uv` (Rust-based, ultra-fast replacement for pip/poetry)
+- **Dependency Manager:** `uv` (Rust-based, ultra-fast replacement for pip/poetry)
 
--   **Data Warehouse:** Google BigQuery (Sandbox/Free Tier compatible)
+- **Data Warehouse:** Google BigQuery (Sandbox/Free Tier compatible)
 
--   **Transformation:** dbt Core (adapter: `dbt-bigquery`)
+- **Transformation:** dbt Core (adapter: `dbt-bigquery`)
 
--   **Orchestration:** Custom Python Pipeline (`main.py`)
+- **Orchestration:** Custom Python Pipeline (`main.py`)
 
--   **Infrastructure:** GCP Service Account (IAM)
+- **Infrastructure:** GCP Service Account (IAM)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
--   Python 3.11+ installed.
+- Python 3.11+ installed.
 
--   uv installed (`curl -LsSf https://astral.sh/uv/install.sh | sh`).
+- uv installed (`curl -LsSf https://astral.sh/uv/install.sh | sh`).
 
--   Google Cloud Platform (GCP) Account with a project created.
+- Google Cloud Platform (GCP) Account with a project created.
 
 ### GCP Setup
 
@@ -70,28 +70,58 @@ To run this project, you need a Service Account with BigQuery Admin permissions:
 
 5. Rename the file to `service_account.json` and place it in the root of this project.
 
-    - Note: This file is ignored by git for security.
+    > [!IMPORTANT] The service_account.json file contains sensitive credentials and is ignored by git for security.
 
 ### Installation
 
-Clone the repository and install dependencies using `uv`:
+Clone the repository and sync dependencies using `uv`:
 
 ```bash
 git clone git@github.com:guifaraco/data-project-ecommerce.git olist-data-platform
 cd olist-data-platform
 
-# Install dependencies from pyproject.toml
+# Install dependencies from pyproject.toml and create virtualenv
 uv sync
 ```
 
-**Activate** the python **virtual environment** (if not activated after sync)
+> [!NOTE] Activate the python virtual environment if not activated after sync
+
+### Configure dbt Profile
+
+Create a `profiles.yml` file in your `~/.dbt/` directory (if it doesn't already exist). Configure it with your GCP project details:
+
+```yml
+olist_data_platform:
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            project: <YOUR_GCP_PROJECT_ID>
+            dataset: <YOUR_DBT_DATASET_NAME> # e.g., dbt_guilherme
+            threads: 4
+            keyfile: /absolute/path/to/your/project/service_account.json
+            location: US
+```
+
+### Configure Kaggle Credentials
+
+1. Log in to your Kaggle account and go to Settings > API > Create New Token.
+
+2. Copy the key/token.
+
+3. Create a .env file in the project root and add your token:
+
+```
+KAGGLE_API_TOKEN=your_token_here
+```
 
 ### Running the Pipeline
 
 **Phase 1: Ingestion (EL)** Run the main Python script to create the dataset in BigQuery and load the raw tables.
 
 ```bash
-uv run python main.py
+uv run python -m src.main
 ```
 
 Expected Output: Logs indicating successfull load of tables like `orders`, `items`, `reviews` into `raw_olist` dataset.

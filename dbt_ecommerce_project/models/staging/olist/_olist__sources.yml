@@ -3,7 +3,7 @@ version: 2
 sources:
     - name: olist
       description: "Raw data from Olist E-commerce loaded by Python."
-      database: "{{ env_var('POSTGRES_DB', 'olist_db') }}"
+      database: quick-magpie-481500-p9
       schema: raw_olist
       tables:
           - name: customers
