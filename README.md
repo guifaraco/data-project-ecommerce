@@ -70,7 +70,8 @@ To run this project, you need a Service Account with BigQuery Admin permissions:
 
 5. Rename the file to `service_account.json` and place it in the root of this project.
 
-    > [!IMPORTANT] The service_account.json file contains sensitive credentials and is ignored by git for security.
+> [!IMPORTANT]
+> The service_account.json file contains sensitive credentials and is ignored by git for security.
 
 ### Installation
 
@@ -84,7 +85,8 @@ cd olist-data-platform
 uv sync
 ```
 
-> [!NOTE] Activate the python virtual environment if not activated after sync
+> [!NOTE]
+> Activate the Python virtual environment if it is not active after syncing
 
 ### Configure dbt Profile
 
